@@ -13,30 +13,7 @@ PROJECT_ID = os.getenv('PROJECT_ID', '')
 
 def main():
     
-    _BUCKET_NAME = 'teste123jkfrewhgnjbuofbjo'
-
-    gcs = GCSHandler(project_id=PROJECT_ID)
-
-
-    buckets = gcs.list_buckets()
-    
-    if _BUCKET_NAME not in buckets:
-        _LOGGER.info(f'PRIMEIRO IF [bucket name]: {_BUCKET_NAME} não encontrado')
-        
-    gcs.create_bucket(
-        bucket_name=_BUCKET_NAME,
-        location='US'
-    )
-    
-    buckets = gcs.list_buckets()
-    
-    if _BUCKET_NAME not in buckets:
-        _LOGGER.info(f'SEGUNDO IF [bucket name]: {_BUCKET_NAME} encontrado')
-    
-    gcs.delete_bucket(
-        bucket_name=_BUCKET_NAME,
-        force=True
-    )
+    pass
     
 
 if __name__ == '__main__':
